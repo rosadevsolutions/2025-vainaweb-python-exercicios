@@ -14,15 +14,25 @@ Saída: [("Ana", 8.0), ("Bruno", 5.33), ("Carlos", 9.67)]
 import utils
 
 #Entrada - Dicionário
-alunos_set = {"Ana": [8, 9, 7], "Bruno": [5, 6, 5], "Carlos": [10, 9, 10]}
+in_alunos_dict = {"Ana": [8, 9, 7], "Bruno": [5, 6, 5], "Carlos": [10, 9, 10]}
 i = 0
 
-def media_tuplas(dicionario):
-  for chave, valores in dicionario.items():
-    media = sum(valores)/3
-    media = round(media, 2)
-    dicionario[chave] = media
-  conversao_tupla = dicionario.items()
-  return print(conversao_tupla)
+#criar função com passagem de param/dicionario
+def media_tuplas(in_dict):
 
-media_tuplas(alunos_set)
+  #iterar dicionario pot items
+  for key, val in in_dict.items():
+    #calcular media
+    proc_media = sum(val)/3
+    #arredondar média pra cima com 2 casa decimais
+    proc_media = round(proc_media, 2)
+    #atribuir a média ao dicionario
+    in_dict[key] = proc_media
+
+  #converter dicionario em lista de tuplas
+  out_list_tuples = list(in_dict.items())
+  return print(out_list_tuples)
+
+utils.cabecalho_exercicio('5) Tupla de médias')
+media_tuplas(in_alunos_dict)
+utils.pular_linha()
