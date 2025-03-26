@@ -18,9 +18,9 @@ def verificar_palindromo(in_str):
   #crio var pra armazenar a inversao da string
   proc_str_reverse = ''.join(reversed(in_str))
   #crio var pra armazenar o valor do teste de comparacao de string e tring invertida
-  cond = proc_str_reverse == in_str
+  out_message = proc_str_reverse == in_str
   #retorno o valor do var cond já exibindo no console
-  return print(cond)
+  return print(out_message)
 
 utils.cabecalho_exercicio('8) Verificador de Palíndromos')
 in_palavra = input('Informar uma palavra: ')
