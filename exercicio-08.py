@@ -13,16 +13,14 @@ Saída: True
 #importanto as funções do arquivo utils
 import utils
 
-
-def verificar_palindromo(palavra):
-  proc_palavra_reversa = ''.join(reversed(palavra))
-  out_mensagem = "False"
-
-  if proc_palavra_reversa == palavra:
-    out_mensagem = "True"
-
-  return print(out_mensagem)
-
+#crio a função com passagem de param/string
+def verificar_palindromo(in_str):
+  #crio var pra armazenar a inversao da string
+  proc_str_reverse = ''.join(reversed(in_str))
+  #crio var pra armazenar o valor do teste de comparacao de string e tring invertida
+  cond = proc_str_reverse == in_str
+  #retorno o valor do var cond já exibindo no console
+  return print(cond)
 
 utils.cabecalho_exercicio('8) Verificador de Palíndromos')
 in_palavra = input('Informar uma palavra: ')
