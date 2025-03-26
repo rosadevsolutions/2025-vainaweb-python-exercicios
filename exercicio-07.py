@@ -14,26 +14,24 @@ Saída: [2, 1, 4]
 #importanto as funções do arquivo utils
 import utils
 
-in_numeros_lista = [1, 3, 3, 2, 1, 1, 4, 4, 4, 2, 2, 2, 5, 5]
-out_numeros_mais_frequentes = []
+#criar função passando param/lista
+def verificar_top_3_frequentes(in_list: list):
+  #criar um dict pra contar alimentar com k,v
+  proc_dict = {}
+  for item in in_list:
+    if item in proc_dict.keys():
+      proc_dict[item] += 1
+    else:
+      proc_dict[item] = 1
 
-def verificar_numeros_frequentes(lista):
-  contador_1 = lista.count(1)
-  contador_2 = lista.count(2)
-  contador_3 = lista.count(3)
-  contador_4 = lista.count(4)
-  contador_5 = lista.count(5)
+  proc_dict_sorted = sorted(proc_dict.keys(), key=lambda v:(proc_dict[v], v), reverse=True)
+  out_dict = proc_dict_sorted[:3]
+  #out_dict = sorted( out_dict.keys(), key = lambda chave: (out_dict[chave], chave))
+  return print(out_dict)
 
-  print(contador_1)
-  print(contador_2)
-  print(contador_3)
-  print(contador_4)
-  print(contador_5)
+in_lista_numeros = [1, 3, 3, 2, 1, 1, 4, 4, 4, 2, 2, 2, 5, 5]
 
-  # Preciso compárar os valores
-  # Ordenar do maior pro menor
-  # e atribuir o numero
-  # em caso de empate usar a ordem numerica
-  #Inserir valores na nova lista
-
-verificar_numeros_frequentes(in_numeros_lista)
+utils.cabecalho_exercicio("Top 3 mais frequentes")
+verificar_top_3_frequentes(in_lista_numeros)
+utils.pular_linha()
+#Saída: [2, 1, 4]
