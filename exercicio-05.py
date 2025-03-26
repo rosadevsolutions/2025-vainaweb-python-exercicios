@@ -21,13 +21,13 @@ i = 0
 def media_tuplas(in_dict):
 
   #iterar dicionario pot items
-  for key, val in in_dict.items():
-    #calcular media
-    proc_media = sum(val)/3
-    #arredondar média pra cima com 2 casa decimais
-    proc_media = round(proc_media, 2)
+  for k, v in in_dict.items():
+
+    #calcular mewdia e arrendondar pra cima com 2 casas decimais
+    proc_media = round(sum(v)/len(v), 2)
+
     #atribuir a média ao dicionario
-    in_dict[key] = proc_media
+    in_dict[k] = proc_media
 
   #converter dicionario em lista de tuplas
   out_list_tuples = list(in_dict.items())
